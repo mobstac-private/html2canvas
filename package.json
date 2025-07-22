@@ -17,10 +17,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:niklasvh/html2canvas.git"
+    "url": "git@github.com:mobstac-private/html2canvas.git"
   },
   "bugs": {
-    "url": "https://github.com/niklasvh/html2canvas/issues"
+    "url": "https://github.com/mobstac-private/html2canvas/issues"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.3",
@@ -97,6 +97,7 @@
     "yargs": "^17.0.1"
   },
   "scripts": {
+    "prepare": "npm run build",
     "prebuild": "rimraf dist/ && rimraf build/ && mkdirp dist && mkdirp build",
     "build": "tsc --module commonjs && rollup -c rollup.config.ts && npm run build:create-reftest-list && npm run build:testrunner && npm run build:minify",
     "build:testrunner": "rollup -c tests/rollup.config.ts",
